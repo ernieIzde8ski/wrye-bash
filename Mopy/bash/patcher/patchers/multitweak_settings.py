@@ -1925,6 +1925,41 @@ class GmstTweak_LevelUp_SkillCount(_AGmstCCTweak):
     default_choice = u'10'
 
 #------------------------------------------------------------------------------
+class GmstTweak_Actor_TrainingCostMultiplier(_AGmstCCTweak):
+    tweak_name = _(u'Actor: Training Cost Multiplier')
+    tweak_tip = _(u'The multiplier by which to increase training costs.')
+    tweak_key = (u'fTrainingMultCost',)
+    tweak_choices = [(u'x1',   1.0),
+                     (u'x5',   5.0),
+                     (u'x10', 10.0),
+                     (u'x20', 20.0)]
+    default_choice = _(u'x10')
+
+#------------------------------------------------------------------------------
+class GmstTweak_Actor_ExpertCostMultiplier(_AGmstCCTweak):
+    tweak_name = _(u'Actor: Expert Training Cost Multiplier')
+    tweak_tip = _(u'The multiplier by which to increase Expert level training '
+                  u'costs.')
+    tweak_key = (u'iTrainingExpertCost',)
+    tweak_choices = [(u'x1', 1.0),
+                     (u'x2', 2.0),
+                     (u'x3', 3.0),
+                     (u'x5', 5.0)]
+    default_choice = _(u'x3')
+
+#------------------------------------------------------------------------------
+class GmstTweak_Actor_MasterCostMultiplier(_AGmstCCTweak):
+    tweak_name = _(u'Actor: Master Training Cost Multiplier')
+    tweak_tip = _(u'The multiplier by which to increase Master level training '
+                  u'costs.')
+    tweak_key = (u'iTrainingMasterCost',)
+    tweak_choices = [(u'x1',   1.0),
+                     (u'x3',   5.0),
+                     (u'x5',   5.0),
+                     (u'x10', 10.0)]
+    default_choice = _(u'x5')
+
+#------------------------------------------------------------------------------
 class TweakSettingsPatcher(MultiTweaker):
     """Tweaks GLOB and GMST records in various ways."""
     _tweak_classes = {globals()[t] for t in bush.game.settings_tweaks}
